@@ -49,6 +49,14 @@ const travelSchema = new Schema({
     type: Boolean,
     required: [true, "Please insert input"],
   },
+  createdAt: {
+    type: Date,
+    required: [true, "Please insert input"],
+  },
+  updatedAt: {
+    type: Date,
+    required: [true, "Please insert input"],
+  },
 });
 
-export const TravelModel = model("Travel", travelSchema);
+export const TravelModel = model("travelinfo", travelSchema);

@@ -2,6 +2,6 @@ import { Router } from "express";
 import { createTravel } from "../controllers/travelController";
 
 const travelRouter = Router();
-travelRouter.route("/create").post(createTravel);
+travelRouter.post("/create", createTravel);
 
-export default travelRouter;
+export { travelRouter };

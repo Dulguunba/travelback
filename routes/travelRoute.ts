@@ -5,4 +5,4 @@ const travelRouter = Router();
 travelRouter.route("/create").post(createTravel);
 travelRouter.route("/get").get(getTravel);
 
-export default travelRouter;
+export { travelRouter };

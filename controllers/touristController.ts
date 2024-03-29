@@ -8,13 +8,14 @@ import { resolve } from "path";
 dotenv.config();
 
 export const createTourist = async (req: Request, res: Response) => {
-  const { name, english } = req.body;
-  console.log("name", name, "english", english);
+  const { name, english, group } = req.body;
+  console.log("name", name, "english", english, group);
 
   try {
     const newTourist = await TouristModel.create({
       name,
       english,
+      group,
       createdAt: new Date(),
     });
     res.status(200).json({ message: "successfully created tourist" });

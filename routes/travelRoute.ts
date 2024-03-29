@@ -1,7 +1,8 @@
 import { Router } from "express";
-import { createTravel } from "../controllers/travelController";
+import { createTravel, getTravel } from "../controllers/travelController";
 
 const travelRouter = Router();
-travelRouter.post("/create", createTravel);
+travelRouter.route("/create").post(createTravel);
+travelRouter.route("/get").get(getTravel);
 
 export { travelRouter };

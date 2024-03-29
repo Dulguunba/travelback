@@ -62,3 +62,12 @@ export const createTravel = async (req: Request, res: Response) => {
     res.status(400).json({ message: "fail to create travel " });
   }
 };
+
+export const getTravel = async (req: Request, res: Response) => {
+  try {
+    const travelData = await TravelModel.find({}).exec();
+    res.status(200).json({ result: travelData });
+  } catch (error) {
+    res.status(400).json({ message: "fail to get tourist data", error: error });
+  }
+};

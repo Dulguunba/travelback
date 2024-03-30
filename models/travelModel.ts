@@ -13,41 +13,69 @@ const travelSchema = new Schema({
     type: Number,
     required: [true, "Please insert input"],
   },
-  adultPrice: {
-    type: Number,
+  price: {
+    adultPrice: {
+      type: Number,
+      required: [true, "Please insert input"],
+    },
+    childPrice: {
+      type: Number,
+      required: [true, "Please insert input"],
+    },
+  },
+  food: {
+    IsIncludeFoodCheck: {
+      type: Boolean,
+      required: [true, "Please insert input"],
+    },
+    IsIncludeFoodPriceCheck: {
+      type: Boolean,
+      required: [true, "Please insert input"],
+    },
+    foodNumber: {
+      type: Number,
+      required: [true, "Please insert input"],
+    },
+    foodPrice: {
+      type: Number,
+      required: [true, "Please insert input"],
+    },
+  },
+  traffic: {
+    trafficPrice: {
+      type: Number,
+      required: [true, "Please insert input"],
+    },
+    IsIncludeTrafficCheck: {
+      type: Boolean,
+      required: [true, "Please insert input"],
+    },
+    IsIncludeTrafficPriceCheck: {
+      type: Boolean,
+      required: [true, "Please insert input"],
+    },
+  },
+  categoryType: {},
+  touristType: {},
+  additionalInfo: {
+    type: String,
     required: [true, "Please insert input"],
   },
-  childPrice: {
-    type: Number,
-    required: [true, "Please insert input"],
+  image: {
+    mainImage: {
+      type: String,
+      required: [true, "Please insert input"],
+    },
+    supportImage: {
+      type: String,
+      required: [true, "Please insert input"],
+    },
   },
-  IsIncludeFoodCheck: {
-    type: Boolean,
-    required: [true, "Please insert input"],
+  route: {
+    type: Array,
   },
-  IsIncludeFoodPriceCheck: {
-    type: Boolean,
-    required: [true, "Please insert input"],
-  },
-  foodNumber: {
-    type: Number,
-    required: [true, "Please insert input"],
-  },
-  foodPrice: {
-    type: Number,
-    required: [true, "Please insert input"],
-  },
-  trafficPrice: {
-    type: Number,
-    required: [true, "Please insert input"],
-  },
-  IsIncludeTrafficCheck: {
-    type: Boolean,
-    required: [true, "Please insert input"],
-  },
-  IsIncludeTrafficPriceCheck: {
-    type: Boolean,
-    required: [true, "Please insert input"],
+  calendar: {
+    type: Array,
   },
   createdAt: {
     type: Date,

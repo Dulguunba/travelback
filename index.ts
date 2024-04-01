@@ -2,12 +2,15 @@ import express from "express";
 import cors from "cors";
 import { connectToDb } from "./connectToDb";
 import cookieParser from "cookie-parser";
-import travelRouter from "./routes/travelRoute";
+import {travelRouter} from "./routes/travelRoute";
 import upload from "./mildwares/multer";
 import cloudinary from "./utils/cloudinary";
 import { ImageModel } from "./models/imageModel";
 import touristRouter from "./routes/touristRoute";
 import categoryRouter from "./routes/categoryRoute";
+import destinationRouter from "./routes/destinationRoute";
+import destinationCategoryRouter from "./routes/destinationCategoryRoute";
+import companyRouter from "./routes/companyRoute";
 
 const app = express();
 const PORT = 8800;
@@ -16,12 +19,15 @@ connectToDb();
 app.use(cors());
 app.use(express.json());
 app.use(cookieParser());
-//test pls
+
 app.use("/travel", travelRouter);
 app.use("/tourist", touristRouter);
 app.use("/category", categoryRouter);
-// app.use("/travelcalendar", );
-// app.use("/travelroute", );
+app.use("/destination", destinationRouter)
+app.use("/destinationcategory", destinationCategoryRouter)
+app.use("/company", companyRouter)
+
+
 
 app.get("", (req, res) => {
   res.send("Hello world");
